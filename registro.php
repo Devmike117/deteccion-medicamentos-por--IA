@@ -1,8 +1,8 @@
 <?php
 // Configuración de la conexión a la base de datos
-$servername = "cloud3.googiehost.com"; // Cambia a "localhost"
-$username = "devmikew__-OAEYGyzF5Rrhtqmc1BE-62gwdhA9c0O"; // Tu nombre de usuario
-$password = "sn7b$%@#$rlx"; // Tu contraseña
+$servername = "cloud3.googiehost.com"; // 
+$username = "devmikew__-OAEYGyzF5Rrhtqmc1BE-62gwdhA9c0O"; // nombre de usuario
+$password = "sn7b$%@#$rlx"; // contraseña
 $dbname = "devmikew_mediia"; // Nombre de la base de datos
 
 // Crear conexión
