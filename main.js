@@ -105,7 +105,7 @@ captureBtn.addEventListener('click', async function() {
         const imageData = canvas.toDataURL("image/png");
 
         // OCR.space API
-        const apiKey = "K85871041088957"; // API key de OCR.space
+        const apiKey = "API"; // API key de OCR.space
         const formData = new FormData();
         formData.append("base64image", imageData);
         formData.append("language", "spa");
@@ -159,7 +159,7 @@ captureBtn.addEventListener('click', async function() {
 
 
         // Gemini API
-        const apiKeyGemini = "AIzaSyCXZ5cLD8Xh2DWaP4wEuR-_uTpJ1B4gXDs"; // API Key de Gemini
+        const apiKeyGemini = "API"; // API Key de Gemini
         const genAI = new GoogleGenerativeAI(apiKeyGemini);
         const model = genAI.getGenerativeModel({ model: "gemini-pro" }); // Modelo IA 
 
