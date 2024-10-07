@@ -33,7 +33,7 @@ body {
     width: 100%;
     height: calc(100vh - 100px); /* Ajustado para dejar espacio para el título */
     padding: 20px;
-    background: rgb(8, 206, 143); /* Fondo con un poco de opacidad */
+    background: rgb(8, 206, 143); /* Fondo  */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
 }
@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20px; /* Espacio entre las secciones */
+    margin-left: 20px; /* Espacio entre secciones */
 }
 
 video {
@@ -87,7 +87,7 @@ video {
 /* Contenedor que agrupa ambos botones */
 #boton-container {
     display: flex;
-    justify-content: center; /* Centrar ambos botones horizontalmente */
+    justify-content: center; /* Centrar botones */
     gap: 10px; /* Espacio entre los botones */
     margin-top: 20px; /* Separación superior */
 }
@@ -109,7 +109,7 @@ video {
 
 
 textarea {
-    /* Ajusta la altura a 80px */
+
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -122,7 +122,7 @@ textarea {
     padding: 10px;
     margin-top: 30px;
     color: #333;
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 5px; 
     
 }
 
@@ -205,9 +205,9 @@ h1 {
 
 
 #capture-container {
-    display: flex;          /* Los botones estarán en la misma fila */
-    gap: 10px;              /* Espacio entre los botones */
-    align-items: center;    /* Alineación vertical de los botones */
+    display: flex;          
+    gap: 10px;              
+    align-items: center;    
 }
 
 #capture-btn {
@@ -223,7 +223,7 @@ h1 {
 }
 
 #capture-btn:hover {
-    background-color: #fa4f6e; /* Cambié el color de hover para una mejor visualización */
+    background-color: #fa4f6e; 
 }
 
 #camera-btn {
@@ -279,12 +279,12 @@ h1 {
     margin-top: 20px;
     font-family: monospace;
     max-height: 400px; /* Altura máxima del cuadro de resultados */
-    overflow-y: auto; /* Activa el scroll si el contenido excede la altura */
+    overflow-y: auto; /* Activar el scroll si el contenido excede la altura */
     border: 1px solid #ccc;
     border-radius: 5px;
-    max-width: 100%; /* Limita el crecimiento horizontal */
-    word-wrap: break-word; /* Evita que el contenido largo se desborde horizontalmente */
-    white-space: pre-wrap; /* Mantiene los saltos de línea y evita scroll horizontal */
+    max-width: 100%; /* Limitar crecimiento horizontal */
+    word-wrap: break-word; /* Evita que se salga horizontalmente */
+    white-space: pre-wrap; /*Scroll horizontal */
 }
 #detected-text, #gemini-response {
     font-size: 1.2em;
@@ -298,8 +298,8 @@ h1 {
     overflow-y: auto; /* Activa el scroll si el contenido excede la altura */
     border: 1px solid #ccc;
     border-radius: 5px;
-    max-width: 100%; /* Limita el crecimiento horizontal */
-    word-wrap: break-word; /* Evita que el contenido largo se desborde horizontalmente */
+    max-width: 100%; 
+    word-wrap: break-word; 
     white-space: pre-wrap;
 }
 
@@ -315,11 +315,11 @@ h1 {
 
 
 #resultadoConsulta a {
-    display: block; /* Para que cada enlace esté en una nueva línea */
+    display: block; /* cada enlace en una nueva línea */
     padding: 5px;  /* Espaciado alrededor del enlace */
-    border: 1px solid #ccc; /* Borde para distinguir */
+    border: 1px solid #ccc; /* Borde */
     border-radius: 5px; /* Bordes redondeados */
-    margin: 5px 0; /* Espaciado entre enlaces */
+    margin: 5px 0; /* Espacio entre enlaces */
     text-decoration: none; /* Sin subrayado */
 }
 
