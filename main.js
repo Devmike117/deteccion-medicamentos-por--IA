@@ -22,7 +22,7 @@ function closeModal() {
     cameraModal.style.display = 'none';
 }
 
-// Obtener las cámaras disponibles y llenar el selector
+// Obtener las cámaras disponibles y mostrarlas
 async function getCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoDevices = devices.filter(device => device.kind === 'videoinput');
@@ -83,7 +83,7 @@ cameraBtn.addEventListener('click', function() {
     }
 });
 
-// Cuando se seleccione una cámara y se presione el botón "Seleccionar cámara"
+// Boton "Seleccionar cámara"
 selectCameraBtn.addEventListener('click', function() {
     const selectedCameraId = cameraSelect.value;
     activateCamera(selectedCameraId);
@@ -176,7 +176,7 @@ captureBtn.addEventListener('click', async function() {
     }
 }
 
-// Mostrar/ocultar historial en el cuadro de resultado
+// Mostraru ocultar historial en el cuadro de resultado
 document.getElementById("botonHistorial").addEventListener("click", () => {
     const resultadoConsulta = document.getElementById("resultadoConsulta");
     const botonHistorial = document.getElementById("botonHistorial");
@@ -184,12 +184,12 @@ document.getElementById("botonHistorial").addEventListener("click", () => {
     // Verificar si el historial ya está visible
     if (resultadoConsulta.innerHTML === "") {
         // Si está vacío, mostrar el historial
-        resultadoConsulta.innerHTML = ""; // Limpiar el área de resultado antes de mostrar el historial
+        resultadoConsulta.innerHTML = ""; // Limpiar el área de resultado 
 
         const historial = JSON.parse(localStorage.getItem('historial')) || [];
         if (historial.length > 0) {
             historial.forEach((item, index) => {
-                // Crear un contenedor para cada consulta
+                // contenedor para cada consulta
                 const divConsulta = document.createElement('div');
                 divConsulta.style.display = "flex";
                 divConsulta.style.alignItems = "center";
@@ -198,12 +198,12 @@ document.getElementById("botonHistorial").addEventListener("click", () => {
 
                 // Crear un enlace para cada consulta con número de orden
                 const link = document.createElement('a');
-                link.href = "#"; // Aquí puedes cambiar para redirigir a la respuesta real si es necesario
-                link.textContent = `${index + 1}. ${item.consulta}`; // Número de orden y texto de la consulta
-                link.style.color = "blue"; // Cambia el color según tu estilo
-                link.style.cursor = "pointer"; // Cambia el cursor al pasar por encima
+                link.href = "#"; // respuesta real 
+                link.textContent = `${index + 1}. ${item.consulta}`; // número de orden y texto de la consulta
+                link.style.color = "blue"; // Color de boton
+                link.style.cursor = "pointer"; // Cambia el cursor
 
-                // Mostrar la respuesta al hacer clic en la consulta
+                // Mostrar la respuesta de la consulta
                 link.addEventListener('click', () => {
                     resultadoConsulta.innerHTML = `<strong>Respuesta:</strong> ${item.respuesta}`;
                 });
@@ -219,7 +219,7 @@ document.getElementById("botonHistorial").addEventListener("click", () => {
                 botonEliminar.style.padding = "5px 10px";
                 botonEliminar.style.borderRadius = "5px";
 
-                // Evento para eliminar la consulta del historial
+                // eliminar la consulta del historial
                 botonEliminar.addEventListener('click', () => {
                     // Eliminar la consulta del historial
                     historial.splice(index, 1);
@@ -310,12 +310,11 @@ document.querySelector("#botonConsulta").addEventListener("click", async () => {
     if (consulta === "") {
         resultadoConsulta.innerHTML = '<span style="color: red;">Por favor, escribe algo válido para realizar la consulta.</span>';
         toggleButtonState(false); // Habilitar el botón de nuevo
-        return; // Salir de la función para no hacer la búsqueda
+        return; // Salir para no hacer la búsqueda
     }
 
     try {
-        const prompt = `${consulta}. responde en español de forma con "nombre cientifico", "Acción farmacológica", "Indicaciones", "Farmacocinética", "Reacciones" si es algo relacionado con la medicina o si son medicamentos muestra informacion pero sin dosis de usos 
-                    de lo contrario muestra "El texto proporcionado no tiene relación con la medicina. Por lo tanto, no puedo ofrecer una respuesta" y si son varias secciones de informacion desglozalas`;
+        const prompt = `${consulta}."El texto proporcionado no tiene relación con la medicina. Por lo tanto, no puedo ofrecer una respuesta"`;
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = await response.text();
